@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"mediaAppTeam4.messages"}],"uuid":"9786706660fa4d83bdc2fc48803fe34f"}

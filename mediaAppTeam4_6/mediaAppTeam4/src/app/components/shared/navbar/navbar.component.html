@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="height: 80px; font-size: 19px;"> 
+  <div class="row" style="padding-bottom: 20px;">
+        <a class="navbar-brand" href="#">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-newspaper" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="font-size: 35px;">
+                <path fill-rule="evenodd" d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z"/>
+                <path d="M2 3h10v2H2V3zm0 3h4v3H2V6zm0 4h4v1H2v-1zm0 2h4v1H2v-1zm5-6h2v1H7V6zm3 0h2v1h-2V6zM7 8h2v1H7V8zm3 0h2v1h-2V8zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1z"/>
+            </svg>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" [routerLink]="['/home']">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" [routerLink]="['/sports']">Sports</a>
+        <a class="nav-link" [routerLink]="['/contactUs']">Contact Us</a>
+        <a class="nav-link" [routerLink]="['/aboutUs']">About Us</a>
+        <a *ngIf="!adminService.getUserDetails()" class="nav-link" [routerLink]="['/register']">Register</a>
+        <a *ngIf="!adminService.getUserDetails()"class="nav-link" [routerLink]="['/login']">Login</a>
+        <a *ngIf="adminService.getUserDetails()" class="nav-link" [routerLink]="['/addNews']">Add News</a>
+        <a *ngIf="adminService.getUserDetails()" class="nav-link" [routerLink]="['/dataViewList']">Edit/Update News</a>
+        <a *ngIf="adminService.getUserDetails()" class="nav-link" [routerLink]="['/users']">Users</a>
+        
+        <button *ngIf="adminService.getUserDetails()" class="btn btn-primary" (click)="logout()" style="text-align:right;"> Logout </button>
+        
+      </div>
+    </div>
+  </nav>
+  <div #alert class="alert alert-success alert-dismissible hide " role="alert">
+    <button type="button" class="close" aria-label="Close" (click)="closeAlert()">&times;</button>Logged out
+  </div> 
+
+  

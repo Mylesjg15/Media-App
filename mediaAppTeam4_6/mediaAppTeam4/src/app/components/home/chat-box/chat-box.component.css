@@ -1,0 +1,75 @@
+* {
+	padding:0;
+	margin:0;
+}
+
+body {
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:18px;
+	
+}
+
+header {
+	width:100%;
+	z-index:900;
+	margin-left: 12px;
+}
+
+.menu-bar {
+	font-size:32px;
+	cursor:pointer;
+	padding:10px 12px;
+	margin-left: 3px;
+	margin-top:5px;
+	margin-bottom:5px;
+}
+
+#tag-menu {
+	display:none;
+}
+
+
+#tag-menu:checked ~ div.drawer {
+ animation: slide-in 0.5s ease;
+ animation-fill-mode: forwards;
+}
+
+.drawer {
+	position: fixed;
+	left:-280px;
+	color: black;
+	background-color: #cccccc;
+	height:auto;
+	width:280px;
+	margin: 6px;
+	border-radius: 15px;
+	animation: slide-out 0.5s ease;
+	animation-fill-mode: forwards;
+}
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	top:40px;
+	left:30px;
+	background-color:#0C9;
+	color:white;
+	border-radius:90px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+	margin-top:22px;
+}
+
+@keyframes slide-in {
+ from {left: -280px;}
+ to {left: 0;}
+}
+
+@keyframes slide-out {
+ from {left: 0;}
+ to {left: -280px;}
+}

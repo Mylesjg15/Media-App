@@ -1,0 +1,47 @@
+<div class="alert alert-success">
+  <strong>User name: </strong>{{name}}&nbsp;
+  <strong>Email: </strong>{{email}}
+</div>
+<h2 style="text-align: center;"> News List </h2>
+<div>
+  <div class="col-md-2">
+  Show <select class="selectpicker"  [(ngModel)]="entries">
+      <option>2</option>
+      <option>5</option>
+      <option>10</option>
+  </select> entries
+  </div>
+  <div class="col-md-8"></div>
+  <div class=" col-md-2" style="text-align: right;">
+      <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="query">
+  </div>
+</div>
+<br/>
+<br/>
+<table class="table table-striped fixed_header" width="100%">
+  <thead class="black white-text">
+    <tr>
+      <th scope="col" width="20%">Title</th>
+      <th scope="col" width="55%">Description</th>
+      <th scope="col" width="10%">Published At</th>
+      <th scope="col" width="15%">Edit/Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let news of newsList | search: query ;let i= index" >
+      <ng-container *ngIf="i!=selected && i<entries">
+        <td>{{news.title}}</td>
+        <td>{{news.description}}</td>
+        <td>{{news.publishedAt| date: 'mediumDate'}}</td>
+        <td><button class="btn btn-primary" (click)="edit(i)"> Edit</button>&nbsp;&nbsp;
+        <button class="btn btn-dark" (click)="delete(news)"> Delete</button></td>
+      </ng-container>
+      <ng-container *ngIf="!notEdited && i==selected && i<entries">
+        <td><input type="text" name="title" [(ngModel)]="news.title"></td>
+        <td><textarea name="description" cols="100" [(ngModel)]="news.description"></textarea></td>
+        <td><input type="text" name="publishedAt" [(ngModel)]="news.publishedAt"></td>        
+        <td><button class="btn btn-primary" (click)="update(news)">Update</button></td>
+      </ng-container>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,21 @@
+agm-map {
+    height: 400px;
+    width: 400px;
+}
+ 
+.row {
+    display: flex;
+}
+
+
+.col-4 {
+    flex: 0 0 0%;
+    
+}
+
+.col-7 {
+    flex: 1 1 0%;
+    text-align: left;
+    padding-left: 200px;
+}
+

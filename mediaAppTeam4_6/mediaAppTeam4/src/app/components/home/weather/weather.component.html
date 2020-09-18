@@ -1,0 +1,63 @@
+<!-- <div class="container">
+    <h3 class="text-center my-4">Weather</h3>
+    <div class="bg-div" style="background-image: url(assets/image2.jfif)">
+  
+      <div class="row">
+        <div class="col-md-5 col-md-offset-1">
+          <p></p>
+          <form [formGroup]="cityForm" (ngSubmit)="cityForm.valid && handleSubmit()">
+            <div class="form-group">
+              <input type="text" name="city" id="city" class="form-control text-center" formControlName="city"
+                placeholder="Enter City Name" required
+                [ngClass]="{ 'is-invalid': cityForm.get('city').touched &&  cityForm.get('city').invalid }">
+              <span class="invalid-feedback">City can't be blank.</span>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <p class="text-center">
+            {{weather.city}}
+          </p>
+          <p class="text-center">
+            {{weather.temperature}} <span>&#8457;</span>
+          </p>
+          <p class="text-center">
+            {{weather.description}}
+          </p>
+  
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="container">
+    <h3 class="text-center my-4">Weather</h3>
+    <div class="bg-div" style="background-image: url(assets/image2.jfif)">
+  
+      <div class="row">
+        <div class="col-md-5 col-md-offset-1">
+          <p></p>
+          <form [formGroup]="cityForm" (ngSubmit)="cityForm.valid && getWeatherForCity()">
+            <div class="form-group">
+              <input type="text" name="city" id="city" class="form-control text-center" formControlName="city"
+                placeholder="Enter City Name" required
+                [ngClass]="{ 'is-invalid': cityForm.get('city').touched &&  cityForm.get('city').invalid }">
+              <span class="invalid-feedback">City can't be blank.</span>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <p class="text-center">
+            {{weather.city}}
+          </p>
+          <p class="text-center">
+            {{weather.temperature}} <span>&#8457;</span>
+          </p>
+          <p class="text-center">
+            {{weather.description}}
+          </p>
+  
+        </div>
+      </div>
+    </div>
+  </div>

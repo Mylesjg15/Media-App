@@ -1,0 +1,10 @@
+.item {
+    height: 93.5%;
+    width: 93.5%;
+}
+
+.carousel-inner img{
+    height: 100%;
+    width: 100%;  
+    object-fit: fill;
+}

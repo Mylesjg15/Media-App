@@ -1,0 +1,67 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="card-body shadow-none p-3 mb-5 bg-light rounded">
+            <div class="col-md-9">
+<div class="alert alert-success">
+    <strong>User name: </strong>{{name}}&nbsp;
+  <strong>Email: </strong>{{email}}
+</div>
+<h2 style="text-align: center;"> Add News </h2>
+<div class="form-group">
+    <form #form="ngForm">
+        <div class="form-group">
+            <label for="title"> Title </label>
+            <input type="text" name="title" id="title" class="form-control" #title="ngModel" [(ngModel)]="news.title" required
+            [ngClass]="{'is-invalid': title.touched && title.invalid}">
+            <span class="invalid-feedback">Title cannot be empty</span>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control rounded-0" name = "description" id="description" rows="3" #description="ngModel" [(ngModel)]="news.description" required
+            [ngClass]="{'is-invalid': description.touched && description.invalid}"></textarea>
+            <span class="invalid-feedback">Title cannot be empty</span>
+          </div>
+          <div class="form-group">
+            <label for="category"> Category </label>
+            <select name="category" class="browser-default custom-select" #category="ngModel" [(ngModel)]="news.category" required
+            [ngClass]="{'is-invalid': category.touched && category.invalid}">
+                <option *ngIf="!category.touched" selected> Category</option>
+                <option>Sports</option>
+                <option>Other</option>
+            </select>
+            <span class="invalid-feedback">Please select category</span>
+        </div>
+        <div class="form-group">
+            <label for="trending"> Trending </label>
+            <select name="trending" class="browser-default custom-select" #trending="ngModel" [(ngModel)]="news.trending" required
+            [ngClass]="{'is-invalid': category.touched && category.invalid}">
+                <option *ngIf="!trending.touched" selected> Trending</option>
+                <option>Yes</option>
+                <option>No</option>
+            </select>
+            <span class="invalid-feedback">Please select Yes or No </span>
+        </div>
+        <div class="form-group">
+            <label for="url"> Url </label>
+            <input type="text" name="url" id="url" class="form-control" #url="ngModel" [(ngModel)]="news.url" required
+            >
+            <span class="invalid-feedback">Please select category</span>
+        </div>
+        <div class="form-group">
+            <label for="url-to-image"> Url To Image </label>
+            <input type="text" name="url-to-image" id="url-to-image" class="form-control" [(ngModel)]="news.urlToImage" required>
+        </div>
+        <div class="form-group">
+            <label for="published-at"> PublishedAt </label>
+            <input type="text" name="published-at" id="published-at" class="form-control" [(ngModel)]="date" required>
+        </div>
+        <div>
+            <button class="btn btn-success" (click)="add()"> Add </button>&nbsp;
+            <button class="btn btn-danger" (click)="reset()"> Reset </button>
+        </div>
+    </form>
+</div>
+</div>
+</div>
+</div>
+</div>

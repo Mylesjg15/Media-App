@@ -1,0 +1,52 @@
+<!-- <h2 class="mb-4 text-primary font-weight-600">
+    Latest News
+  </h2> -->
+<!-- <div class="container">
+  <div class="block">1</div>&nbsp;
+    <div class="block">2</div>&nbsp;
+    <div class="block">3</div> 
+    <div class="block" *ngFor="let n of sportsNews">
+        <div class="rotate-img">
+          <img
+            src="{{n.urlToImage}}"
+            alt="banner"
+            class="img-fluid"
+          />
+        </div>
+        <h6 class="mt-3font-weight-600">
+          <a href="{{n.url}}" target="_blank">
+            {{n.title}}
+          </a>
+        </h6>
+        <p class="fs-13 text-muted mb-0">
+        <span class="mr-2">Photo </span>
+          10 Minutes ago
+        </p>
+      </div> 
+</div> -->
+
+<!-- <h2 class="mb-4 text-primary font-weight-600">
+    Latest News
+  </h2> -->
+<div class="container">
+  <!-- <div class="block">1</div>&nbsp;
+    <div class="block">2</div>&nbsp;
+    <div class="block">3</div> -->
+  &nbsp;
+    <div class="row">
+  <div class="block" *ngFor="let n of latestNews">
+    <div class="rotate-img">
+      <img src="{{n.urlToImage}}" alt="banner" class="img-fluid" />
+    </div>
+    <h6 class="mt-3 font-weight-600">
+      <a href="{{n.url}}" target="_blank">
+        {{n.title}}
+      </a>
+    </h6>
+    <p class="fs-13 text-muted mb-0">
+      <!-- <span class="mr-2">Photo </span> -->
+      10 Minutes ago
+    </p>
+  </div>
+  </div>
+</div>

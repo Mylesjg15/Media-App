@@ -1,0 +1,42 @@
+<div class="alert alert-success">
+    <strong>User name: </strong>{{name}}&nbsp;
+    <strong>Email: </strong>{{email}}
+  </div>
+  <h2 style="text-align: center;"> User List </h2>
+  <div>
+    <div class="col-md-2">
+    Show <select class="selectpicker"  [(ngModel)]="entries">
+        <option>2</option>
+        <option>5</option>
+        <option>10</option>
+    </select> entries
+    </div>
+    <div class="col-md-8"></div>
+  </div>
+  <br/>
+  <br/>
+  <table class="table table-striped fixed_header" width="100%">
+    <thead class="black white-text">
+      <tr>
+        <th scope="col" >User name</th>
+        <th scope="col" >Email</th>
+        <th scope="col" >Role</th>
+        <th scope="col" >Grant/Revoke</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users;let i= index" >
+        
+          <ng-container *ngIf="i<entries && user.email!=email">
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+          <td *ngIf="!user.active">User</td>
+          <td *ngIf="user.active">Admin</td>
+          <td><button *ngIf="!user.active" class="btn btn-success" (click)="edit(user)"> Grant admin</button>
+            <button *ngIf="user.active" class="btn btn-danger" (click)="edit(user)">Revoke admin </button></td>
+          <td><button class="btn btn-dark" (click)="delete(user)"> Delete</button></td>
+        </ng-container>
+      </tr>
+    </tbody>
+  </table>

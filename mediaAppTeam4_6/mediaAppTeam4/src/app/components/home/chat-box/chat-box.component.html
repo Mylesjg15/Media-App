@@ -1,0 +1,30 @@
+<header>
+  <a class="float">
+    <input type="checkbox" id="tag-menu" />
+    <label class="fa fa-comments menu-bar" for="tag-menu"></label>
+    <div class="drawer">
+      <nav>
+        <div class="card-header">
+          <ul class="list-group borderless">
+            <li>
+              <input type="text" class="form-control" [(ngModel)]="user" style="margin-top: 10px; margin-left: 13px; width: 80%;" placeholder="Enter name...">
+            </li>
+            <li>
+              <div>
+                <ul class="list-group mt-2 overflow-auto" style="max-height: 200px; min-height: 200px; width: 100%; overflow: scroll; -webkit-overflow-scrolling: touch;">
+                    <li id="message-item" style="margin-top: 10px; margin-left: 13px; margin-bottom: 10px; text-align: left;">
+                      
+                    </li>
+                  </ul>
+              </div>
+            </li>
+            <li>
+              <input class="form-control" type="text" [(ngModel)]="message" style="margin-left: 13px; width: 80%;" placeholder="Enter message">
+              <button class="btn btn-lg" style="margin-top: 6px; margin-bottom: 10px; margin-left: -50px;" type="submit" (click)="SendMessage()">Send</button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </a>
+</header>

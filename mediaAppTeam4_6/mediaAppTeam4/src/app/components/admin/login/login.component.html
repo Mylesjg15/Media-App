@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="card-body shadow-none p-3 mb-5 bg-light rounded">
+            <div class="col-md-9">
+<h2 style="text-align: center;"> Login </h2>
+<div class="form-group">
+    <form #form="ngForm">
+        <div class="form-group">
+            <label for="email"> Email </label>
+            <input type="text" name="email" id="email" class="form-control" #emailForm="ngModel" [(ngModel)]="email" required email
+            [ngClass]="{'is-invalid':emailForm.touched && emailForm.invalid}">
+            <span class="invalid-feedback">
+                <span *ngIf="emailForm.hasError('required')"> Email cannot be empty</span>
+                <span *ngIf="emailForm.hasError('email')"> Email must be valid</span>
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="password"> Password </label>
+            <input type="password" name="password" id="password" class="form-control" #passwordForm="ngModel" [(ngModel)]="password" required
+            [ngClass]="{'is-invalid': passwordForm.touched && passwordForm.invalid}">
+            <span class="invalid-feedback"> Password cannot be empty</span>
+        </div>
+        <div>
+            <button [disabled]="form.invalid" class="btn btn-success" (click)="login()"> Login </button>&nbsp;
+            <button class="btn btn-danger" (click)="reset()"> Reset </button>
+        </div>
+    </form>
+</div>
+</div>
+</div>
+</div>
+</div>

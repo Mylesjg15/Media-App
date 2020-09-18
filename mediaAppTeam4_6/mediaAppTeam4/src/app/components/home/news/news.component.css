@@ -1,0 +1,18 @@
+.block{
+    display: inline-block;
+    width: 325px;
+    height: 280px;
+    background-color: lightgray;
+    margin-right: 20px;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+.container{
+    text-align: center;
+}
+
+.img-fluid {
+    height: 170px;
+    width: 325px;
+}
+
